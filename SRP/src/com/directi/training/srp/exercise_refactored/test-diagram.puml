@@ -1,0 +1,30 @@
+@startuml
+ 
+class Car {
+-String id 
+-String model 
+-String brand
++String getId()
++String getModel()
++String getBrand()
+}
+
+class CarDao {
+-ArrayList : Cars[] 
++void getFromDb(String)
++ ArrayList<Car> findAll()
+}
+class   CarFormatter {
++ String getCarsNames(ArrayList<Car>)
+}
+class   CarRater {
++ Car getBestCar(ArrayList<Car>)
+}
+class   CarManager {
+- CarDao _carDao
+- CarFormatter _carFormatter
+- CarRater _carRater
+
+
+
+@enduml
