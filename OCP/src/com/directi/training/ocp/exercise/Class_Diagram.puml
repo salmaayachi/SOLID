@@ -1,0 +1,24 @@
+@startuml OCP
+
+
+class ResourceAllocator {
+    
+
+	+int: allocate()
+	+void: free()
+    +void: markSpaceSlotFree()
+    +void: markTimeSlotFree()
+    +void: markSpaceSlotBusy()
+    +void: markTimeSlotBusy()
+    +int: findFreeSpaceSlot()
+    +int: findFreeTimeSlot()
+
+}
+ enum ResourceType {
+    TIME_SLOT
+    SPACE_SLOT
+ }
+
+ResourceAllocator -- ResourceType
+
+@enduml
