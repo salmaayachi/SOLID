@@ -1,0 +1,38 @@
+@startuml SRP
+ 
+class Car {
+-String _id 
+-String _model 
+-String _brand
++String: getId()
++String: getModel()
++String: getBrand()
+}
+
+class CarDao {
+-List<Car> _carsDb
++ Car: getFromDb()
++ List<Car>: findAll()
+}
+class   CarFormatter {
++ String: getCarsNames()
+}
+class   CarRater {
++Car : getBestCar()
+}
+class   CarManager {
+- CarDao _carDao
+- CarFormatter _carFormatter
+- CarRater _carRater
+
++Car: getCarById()
++String: getCarsNames()
++Car: getBestCar()
+}
+
+CarDao -- Car
+CarManager -- CarDao
+CarManager -- CarRater
+CarManager -- CarFormatter
+
+@enduml
