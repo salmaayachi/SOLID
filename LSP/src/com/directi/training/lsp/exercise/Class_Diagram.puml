@@ -1,0 +1,27 @@
+@startuml LSP
+
+class Duck {
+    +void: quack()
+	+void: swim()
+}
+
+class ElectronicDuck {
+    -boolean _on
+    +void: quack()
+	+void: swim()
+    +void: turnOn()
+	+void: turnOff()
+}
+
+class Pool {
+    + void: run()
+    + void: quack()
+    + void: swim()
+    + {static} void: main()
+}
+
+Duck <|-- ElectronicDuck 
+Pool -- ElectronicDuck
+Pool -- Duck
+
+@enduml
